@@ -14,5 +14,5 @@ setinterval(function () {
 //3
 setInterval(() => {
 
-    console.log('coucouarrow function ES6');
+    console.log('coucou arrow function ES6');
 }, 1000);
