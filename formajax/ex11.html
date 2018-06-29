@@ -3,9 +3,45 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>EX11</title>
 </head>
 <body>
+    <ul id="lesArticles">
+        
+        
+    </ul>
 
+
+    <script src="httpRequest.js"></script>
+
+    <script>
+          //récupération de l'objet de communication
+        let httpReq = getHttpRequest();
+
+          //creation du callback
+          httpReq.onreadystatechange = () => {
+              if (httpReq.readyState == 4) {
+                  console.log(httpReq.responseText);
+                  let data = JSON.parse(httpReq.responseText);
+                  let ul = document.querySelector('#lesArticles');
+                  for (let item of data) {
+                      ul.innerHTML += `<li>${item.title}</li>`;
+                  }
+        //2
+        /*
+        let titres = data.map(x = <x.title);
+        for (let item of titres) {
+            ul.insertAdjacentHTML('beforeend', `<li>${item}</li>`);
+        }*/
+              }
+              };
+              //ouverture de la communication
+              httpReq.open('GET', 'http://jsonplaceholder.typicode.com/posts', true);
+              //envoi de la demande
+        httpReq.send();
+
+       
+       
+    </script>
 </body>
 </html>
