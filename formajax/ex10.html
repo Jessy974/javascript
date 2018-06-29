@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <span class="normal"></span>
+    <span class="append"></span>
+    <button>Add</button>
+
+    <script>
+        let button = document.querySelector('button');
+        button.addEventListener('click', () => {
+            let span = document.querySelector('span.append').insertAdjacentHTML('afterbegin', 'coucou')
+           ;
+
+            let span2 = document.querySelector('span.normal').innerHTML = 'coucou';
+            
+            
+
+            //console.log(span, span2);
+
+        });
+    </script>
+</body>
+</html>

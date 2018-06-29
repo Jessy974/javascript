@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        let students = [{
+            name: "Bob",
+            exam: 4
+        }, {
+            name: "Martin",
+            exam: 10
+        }, {
+            name: "Jean",
+            exam: 8
+        }];
+        let tab = students.map(x => x.exam);
+        let reducer = (students, tab) => students + tab;
+        console.log(tab.reduce(reducer));
+    </script>
+</body>
+</html>
